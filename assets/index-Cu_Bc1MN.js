@@ -12,7 +12,7 @@
       </a>
     </div>
   </main>
-`,m=()=>{const t=e();function e(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,s=window.location.hash,l="/front_5th_chapter1-1";return console.log(o),console.log(s),`
+`,m=()=>{const t=e();function e(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,s=window.location.hash;return console.log(o),console.log(s),`
     <div class="max-w-md w-full">
         <header class="bg-blue-600 text-white p-4 sticky top-0">
           <h1 class="text-2xl font-bold">항해플러스</h1>
@@ -23,7 +23,7 @@
             </li>
             ${t?`<li><a href="/profile" class="${o==="/profile"||s=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
                 <li><a href="/login" id='logout' class="${o==="/login"||s=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그아웃</a></li>
-              `:`<li><a href="${l}/login" class="${o==="/login"||s=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
+              `:`<li><a href="/login" class="${o==="/login"||s=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
           </ul>
         </nav>
   `},b=()=>`

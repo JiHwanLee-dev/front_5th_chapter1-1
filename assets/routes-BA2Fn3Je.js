@@ -12,18 +12,18 @@
       </a>
     </div>
   </main>
-`,b=()=>{const t=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,e="/front_5th_chapter1-1";let s="/",a="/profile",f="/login",i,r,d;return i=e+s,r=e+a,d=e+f,console.log(o+" | "+i),console.log(o+" | "+r),`
+`,b=()=>{const t=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,e="/front_5th_chapter1-1";let s="/",a="/profile",f="/login",r,d,c;return r=e+s,d=e+a,c=e+f,console.log(o+" | "+r),console.log(o+" | "+d),`
     <div class="max-w-md w-full">
         <header class="bg-blue-600 text-white p-4 sticky top-0">
           <h1 class="text-2xl font-bold">항해플러스</h1>
         </header>
         <nav class="bg-white shadow-md p-2 sticky top-14">
           <ul class="flex justify-around">
-            <li><a href="/" class="${o===i||n=="#/"?"text-blue-600 font-bold":"text-gray-600"}">홈</a></li>
+            <li><a href="/" class="${o===r||n=="#/"?"text-blue-600 font-bold":"text-gray-600"}">홈</a></li>
             </li>
-            ${t?`<li><a href="/profile" class="${o===r||n=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
-                <li><a href="/login" id='logout' class="${o===d||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그아웃</a></li>
-              `:`<li><a href="/login" class="${o===d||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
+            ${t?`<li><a href="/profile" class="${o===d||n=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
+                <li><a href="/login" id='logout' class="${o===c||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그아웃</a></li>
+              `:`<li><a href="/login" class="${o===c||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
           </ul>
         </nav>
   `},m=()=>`
@@ -214,4 +214,4 @@
         </div>
       </div>
     </div>
-  `};console.log("나는 router.js야");const v={getCurrentPath:()=>window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash.slice(1)||"/":window.location.pathname,navigate:t=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=t:window.history.pushState({},"",t)}},c="/front_5th_chapter1-1",p={[`${c}/`]:g,[`${c}/login`]:h,[`${c}/profile`]:x},u=t=>(console.log(`Redirecting to ${t}`),v.navigate(t),p[t]()),$=t=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&t==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),u("/login");if(l!==null&&t==="/login")return console.log("Already logged in, redirecting to home"),u("/");if(o=p[t],o)return o()};export{y as E,$ as h,v as r};
+  `};console.log("나는 router.js야");const v={getCurrentPath:()=>window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash.slice(1)||"/":window.location.pathname,navigate:t=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=t:window.history.pushState({},"",t)}},i="/front_5th_chapter1-1";console.log("BASE: ",i);const p={[`${i}/`]:g,[`${i}/login`]:h,[`${i}/profile`]:x},u=t=>(console.log(`Redirecting to ${t}`),v.navigate(t),p[t]()),$=t=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&t==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),u("/login");if(l!==null&&t==="/login")return console.log("Already logged in, redirecting to home"),u("/");if(o=p[t],o)return o()};export{y as E,$ as h,v as r};

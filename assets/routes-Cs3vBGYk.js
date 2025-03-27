@@ -1,4 +1,4 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function o(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=o(t);fetch(t.href,s)}})();const $=()=>`
+(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function o(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=o(t);fetch(t.href,s)}})();const P=()=>`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
       <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -12,7 +12,7 @@
       </a>
     </div>
   </main>
-`,b=()=>{const e=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,t="/front_5th_chapter1-1";let s="/",i="/profile",g="/login",r,d,c;return r=t+s,d=t+i,c=t+g,console.log(o+" | "+r),console.log(o+" | "+d),`
+`,p=()=>{const e=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,t="/front_5th_chapter1-1";let s="/",i="/profile",f="/login",r,d,c;return r=t+s,d=t+i,c=t+f,console.log(o+" | "+r),console.log(o+" | "+d),`
     <div class="max-w-md w-full">
         <header class="bg-blue-600 text-white p-4 sticky top-0">
           <h1 class="text-2xl font-bold">항해플러스</h1>
@@ -30,9 +30,9 @@
       <footer class="bg-gray-200 p-4 text-center">
         <p>&copy; 2024 항해플러스. All rights reserved.</p>
       </footer>
-`,f=()=>`
+`,h=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
-      ${b()}
+      ${p()}
       <main class="p-4">
         <div class="mb-4 bg-white rounded-lg shadow p-4">
           <textarea class="w-full p-2 border rounded" placeholder="무슨 생각을 하고 계신가요?"></textarea>
@@ -126,7 +126,7 @@
       
     </div>
   </div>
-`,h=()=>`
+`,x=()=>`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -148,7 +148,7 @@
         </div>
       </div>
     </main>
-  `,x=()=>{const e=b(),l=JSON.parse(localStorage.getItem("user"));let o,n,t;return l!==null&&(o=l.username,n=l.email,t=l.bio),`
+  `,v=()=>{const e=p(),l=JSON.parse(localStorage.getItem("user"));let o,n,t;return l!==null&&(o=l.username,n=l.email,t=l.bio),`
     <div id="root">
       <div class="bg-gray-100 min-h-screen flex justify-center">
         <div class="max-w-md w-full">
@@ -214,4 +214,4 @@
         </div>
       </div>
     </div>
-  `};console.log("나는 router.js야");const v=!0,w={getCurrentPath:()=>{console.log("start getCurrentPath");const e=window.location.pathname.includes("index.hash.html")||window.location.hash!=="";return console.log(`pathName: ${window.location.pathname}`),console.log(`hash: ${window.location.hash}`),console.log(e),console.log(e?window.location.hash.slice(1)||"/":window.location.pathname),console.log(v),e?window.location.hash.slice(1)||"/":window.location.pathname},navigate:e=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=e:window.history.pushState({},"",e)}},a="/front_5th_chapter1-1";console.log("BASE: ",a);const p={[`${a}/`]:f,[`${a}/login`]:h,[`${a}/profile`]:x},u=e=>(console.log(`Redirecting to ${e}`),w.navigate(e),p[e]()),P=e=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&e==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),u(`${a}/login`);if(l!==null&&e==="/login")return console.log("Already logged in, redirecting to home"),u(`${a}/`);if(o=p[e],o)return o()};export{$ as E,P as h,w as r};
+  `};console.log("나는 router.js야");const w=!0,u="/front_5th_chapter1-1",y={getCurrentPath:()=>{console.log("start getCurrentPath");const e=window.location.pathname.includes("index.hash.html")||window.location.hash!=="";return console.log(`pathName: ${window.location.pathname}`),console.log(`hash: ${window.location.hash}`),console.log(e),console.log(e?window.location.hash.slice(1)||"/":window.location.pathname),console.log(w),e?e?u+window.location.hash.slice(1)||u+"/":window.location.pathname:e?window.location.hash.slice(1)||"/":window.location.pathname},navigate:e=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=e:window.history.pushState({},"",e)}},a="/front_5th_chapter1-1";console.log("BASE: ",a);const g={[`${a}/`]:h,[`${a}/login`]:x,[`${a}/profile`]:v},b=e=>(console.log(`Redirecting to ${e}`),y.navigate(e),g[e]()),S=e=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&e==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),b(`${a}/login`);if(l!==null&&e==="/login")return console.log("Already logged in, redirecting to home"),b(`${a}/`);if(o=g[e],o)return o()};export{P as E,S as h,y as r};

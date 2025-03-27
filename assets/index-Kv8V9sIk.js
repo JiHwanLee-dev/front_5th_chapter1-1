@@ -12,7 +12,7 @@
       </a>
     </div>
   </main>
-`,p=()=>{const t=o();function o(){return JSON.parse(localStorage.getItem("user"))!==null}const e=window.location.pathname,n=window.location.hash,l="/front_5th_chapter1-1";let s="/",a="/profile",x="/login",i,d,b;return i=e+s,d=e+a,b=e+x,console.log(e+" | "+i),console.log(e+" | "+d),`
+`,p=()=>{const t=o();function o(){return JSON.parse(localStorage.getItem("user"))!==null}const e=window.location.pathname,n=window.location.hash,l="/front_5th_chapter1-1";let s="/",a="/profile",x="/login",i,d,b;return i=l+s,d=l+a,b=l+x,console.log(e+" | "+i),console.log(e+" | "+d),`
     <div class="max-w-md w-full">
         <header class="bg-blue-600 text-white p-4 sticky top-0">
           <h1 class="text-2xl font-bold">항해플러스1</h1>

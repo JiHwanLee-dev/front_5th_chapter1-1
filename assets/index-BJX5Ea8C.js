@@ -19,13 +19,11 @@
         </header>
         <nav class="bg-white shadow-md p-2 sticky top-14">
           <ul class="flex justify-around">
-            <li><a href="/" class="${o==="/"||s=="#/"?"text-blue-600 font-bold":"text-gray-600"}">홈11</a></li>
+            <li><a href="/" class="${o==="/"||s=="#/"?"text-blue-600 font-bold":"text-gray-600"}">홈</a></li>
             </li>
             ${t?`<li><a href="/profile" class="${o==="/profile"||s=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
                 <li><a href="${l}/login" id='logout' class="${o==="/login"||s=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그아웃</a></li>
               `:`<li><a href="${l}/login" class="${o==="/login"||s=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
-            
-         
           </ul>
         </nav>
   `},m=()=>`

@@ -1,4 +1,4 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function o(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(e){if(e.ep)return;e.ep=!0;const s=o(e);fetch(e.href,s)}})();const y=()=>`
+(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function o(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=o(t);fetch(t.href,s)}})();const y=()=>`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
       <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -12,7 +12,7 @@
       </a>
     </div>
   </main>
-`,b=()=>{const t=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,e="/front_5th_chapter1-1";let s="/",i="/profile",f="/login",r,d,c;return r=e+s,d=e+i,c=e+f,console.log(o+" | "+r),console.log(o+" | "+d),`
+`,b=()=>{const e=l();function l(){return JSON.parse(localStorage.getItem("user"))!==null}const o=window.location.pathname,n=window.location.hash,t="/front_5th_chapter1-1";let s="/",i="/profile",g="/login",r,d,c;return r=t+s,d=t+i,c=t+g,console.log(o+" | "+r),console.log(o+" | "+d),`
     <div class="max-w-md w-full">
         <header class="bg-blue-600 text-white p-4 sticky top-0">
           <h1 class="text-2xl font-bold">항해플러스</h1>
@@ -21,7 +21,7 @@
           <ul class="flex justify-around">
             <li><a href="/" class="${o===r||n=="#/"?"text-blue-600 font-bold":"text-gray-600"}">홈</a></li>
             </li>
-            ${t?`<li><a href="/profile" class="${o===d||n=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
+            ${e?`<li><a href="/profile" class="${o===d||n=="#/profile"?"text-blue-600 font-bold":"text-gray-600"}">프로필</a></li>
                 <li><a href="/login" id='logout' class="${o===c||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그아웃</a></li>
               `:`<li><a href="/login" class="${o===c||n=="#/login"?"text-blue-600 font-bold":"text-gray-600"}">로그인</a></li>`}
           </ul>
@@ -30,7 +30,7 @@
       <footer class="bg-gray-200 p-4 text-center">
         <p>&copy; 2024 항해플러스. All rights reserved.</p>
       </footer>
-`,g=()=>`
+`,f=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
       ${b()}
       <main class="p-4">
@@ -148,11 +148,11 @@
         </div>
       </div>
     </main>
-  `,x=()=>{const t=b(),l=JSON.parse(localStorage.getItem("user"));let o,n,e;return l!==null&&(o=l.username,n=l.email,e=l.bio),`
+  `,x=()=>{const e=b(),l=JSON.parse(localStorage.getItem("user"));let o,n,t;return l!==null&&(o=l.username,n=l.email,t=l.bio),`
     <div id="root">
       <div class="bg-gray-100 min-h-screen flex justify-center">
         <div class="max-w-md w-full">
-          ${t}
+          ${e}
           <main class="p-4">
             <div class="bg-white p-8 rounded-lg shadow-md">
               <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">
@@ -198,7 +198,7 @@
                     name="bio"
                     rows="4"
                     class="w-full p-2 border rounded"
-                  >${e}</textarea>
+                  >${t}</textarea>
                 </div>
                 <button
                   type="submit"
@@ -214,4 +214,4 @@
         </div>
       </div>
     </div>
-  `};console.log("나는 router.js야");const v={getCurrentPath:()=>window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash.slice(1)||"/":window.location.pathname,navigate:t=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=t:window.history.pushState({},"",t)}},a="/front_5th_chapter1-1";console.log("BASE: ",a);const p={[`${a}/`]:g,[`${a}/login`]:h,[`${a}/profile`]:x},u=t=>(console.log(`Redirecting to ${t}`),v.navigate(t),p[t]()),$=t=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&t==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),u(`${a}/login`);if(l!==null&&t==="/login")return console.log("Already logged in, redirecting to home"),u(`${a}/`);if(o=p[t],o)return o()};export{y as E,$ as h,v as r};
+  `};console.log("나는 router.js야");const v={getCurrentPath:()=>{console.log("start getCurrentPath");const e=window.location.pathname.includes("index.hash.html")||window.location.hash!=="";return console.log(`pathName: ${window.location.pathname}`),console.log(`hash: ${window.location.hash}`),e?window.location.hash.slice(1)||"/":window.location.pathname},navigate:e=>{console.log("router - navigate"),window.location.pathname.includes("index.hash.html")||window.location.hash!==""?window.location.hash=e:window.history.pushState({},"",e)}},a="/front_5th_chapter1-1";console.log("BASE: ",a);const p={[`${a}/`]:f,[`${a}/login`]:h,[`${a}/profile`]:x},u=e=>(console.log(`Redirecting to ${e}`),v.navigate(e),p[e]()),$=e=>{console.log("routes - handleRouting");const l=JSON.parse(localStorage.getItem("user"));let o;if(l===null&&e==="/profile")return console.log("Unauthorized access to profile, redirecting to login"),u(`${a}/login`);if(l!==null&&e==="/login")return console.log("Already logged in, redirecting to home"),u(`${a}/`);if(o=p[e],o)return o()};export{y as E,$ as h,v as r};
